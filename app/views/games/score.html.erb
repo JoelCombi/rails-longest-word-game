@@ -1,0 +1,29 @@
+
+<div class="container text-center">
+  <h1>The Score!</h1>
+  <ul class="list-inline">
+    <% @letters.each do |letter| %>
+      <li><div class="alert alert-info">
+        <%= letter %>
+      </div></li>
+    <% end %>
+  </ul>
+
+  <h2>Your answer: <%= @answer %></h2>
+
+  <p><%= @result[:message] %></p>
+  <ul class="list-inline">
+    <li><div class="alert alert-success">
+      <h3>Your score is:</h3>
+      <h5><%= @result[:score] %></h5>
+    </div></li>
+    <li><div class="alert alert-success">
+      <h3>Time taken was:</h3>
+      <h5><%= @result[:time] %></h5>
+    </div></li>
+  </ul>
+
+  <%= link_to "Try another game", new_path, { class: "btn btn-info" } %>
+
+</div>
+

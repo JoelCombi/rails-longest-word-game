@@ -1,0 +1,20 @@
+<div class="container text-center">
+  <h1>New Game!</h1>
+
+  <ul class="list-inline">
+    <% @letters.each do |letter| %>
+      <li><div class="alert alert-info">
+        <%= letter %>
+      </div></li>
+    <% end %>
+  </ul>
+
+  <form action="score" method="get" class="form-inline">
+    <%= hidden_field_tag :start_time, Time.now.to_i %>
+    <%= hidden_field_tag :generated_grid, @letters %>
+    <div class="form-group">
+      <input type="text" name="word_guess" placeholer="Guess a word..." class="form-control">
+      <input type="submit" class="btn btn-info">
+    </div>
+  </form>
+</div>
